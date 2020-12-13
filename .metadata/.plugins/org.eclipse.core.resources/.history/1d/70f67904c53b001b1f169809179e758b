@@ -1,0 +1,34 @@
+package com.example.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.domain.DepositAccountVO;
+import com.example.domain.DepositVO;
+import com.example.mapper_oracle.DepositAccountMapper;
+
+@Service
+public class DepositService {
+	@Autowired
+	DepositAccountMapper mapper;
+	
+	@Transactional
+	public void depositinsert(DepositVO vo) {
+		mapper.depositinsert(vo);
+		mapper.depositaccountupdate(vo.getDepositbalance(),vo.getDeposit_depositaccountcode());
+	}
+	
+	@Transactional
+	public void depositaccountinsert(DepositAccountVO vo) {
+		mapper.depositaccountinsert(vo);
+		DepositVO dvo=new DepositVO();
+		dvo.setDeposit_companycode("347-88-00867");
+		dvo.setDeposit_day(vo.getDepositaccount_startday());
+		dvo.setDeposit_depositaccountcode(vo.getDepositaccountcode());
+		dvo.setDepositamount("0");
+		dvo.setDepositbalance(vo.getDepositaccountamount());
+		dvo.setDeposittype("ют╠щ");
+		mapper.depositinsert(dvo);
+	}
+}

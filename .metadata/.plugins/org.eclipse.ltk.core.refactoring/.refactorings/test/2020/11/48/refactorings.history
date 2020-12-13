@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;LcategoryMapper.xml&apos; to &apos;test/src/main/resources/mapper_oracle&apos;&#x0D;&#x0A;- Original project: &apos;test&apos;&#x0D;&#x0A;- Destination element: &apos;test/src/main/resources/mapper_oracle&apos;&#x0D;&#x0A;- Original element: &apos;LcategoryMapper.xml&apos;" description="Copy file" destination="/src\/main\/resources&lt;mapper_oracle" element1="src/main/resources/mapper_oracle/LcategoryMapper.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1606481607680" units="0" version="1.0"/>
+</session>
